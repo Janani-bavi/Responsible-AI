@@ -1,0 +1,53 @@
+ import shap
+ import pandas as pd
+ from sklearn.ensemble import RandomForestClassifier
+ from sklearn.datasers import load_breast_cancer
+ data=load_breast_cancer()
+ x=pd.DataFrame(data.data,columns=data.feature_names)
+ y=pd.series(data.target)
+ x_train.x_test,y_train,y_teest=train_test.split(x,y,test_size=0.2,random_state=42)
+ clf=RandomForestClassifier(random_state=42).fit(x_train,y_train)
+ explainer=shap.Explainer(clf,x_train)
+ shap_values=explainer(x_test)
+ shap.plots.bar(shap_values)
+#
+ from lime.lime_tabular import LimeTabularExplainer
+ lime_exp=LimeTabularExplainer(
+     x_train.values,
+     feature_names=list(X.columns),
+     clss_names=["benign","malignant"],
+     mode="classification"
+ )
+ i=0
+ exp=lime_exp.explain_instance(x_test.iloc[i].values,clf.predict_proba)
+ exp.show_in-notebook(
+     print(exp.as_list())
+#
+
+ import pandas as pd
+ import shap
+ from sklearn.ensemble import RandomForestRegressor
+ from sklearn.model_selection import train_test_split
+ from sklearn.datasets import load_diabetes
+ data=load_diabetes()
+ x=pd.Dataframe(data.data,columns=data.feature_names)
+ y=data.target
+#
+import pandas as pd
+import re
+data={'Name':['Alice','Bob','Charlie'],
+'Email':['alice@gmail.com','bob@gmail.com','Charlie@gmail.com']}
+df=pd.DataFrame(data)
+def mask_email(Email):
+    return re.sub(r'(?<=.{2}).(?=.*@),'*',Email)
+                  def['Email']=df['Email'].apply(mask_email)
+                  print(df)
+
+
+
+
+
+
+
+
+
