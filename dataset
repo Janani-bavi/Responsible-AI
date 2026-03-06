@@ -1,0 +1,11 @@
+database={
+    "user1":{"name":"alice","data":"..."},
+    "user2":{"name":"bob","data":"..."}
+ }
+def delete_user_data(user_id):
+    if user_id in database:
+       del database[user_id]
+       print(f"User{user_id} data deleted.")
+    else:
+       print("user not found.")
+delete_user_data("user1")
