@@ -1,0 +1,32 @@
+import datetime
+user_consent = True
+consent_purpose = "Marketing"
+data_collection_purpose = "Marketing"
+def process_user_data(user_id, data, purpose, consent):
+    if not consent or purpose != consent_purpose:
+        print("Error: Purpose mismatch or no consent.")
+        return None
+
+    print(f"Processing data for {purpose}...")
+    return {
+        "user_id": user_id,
+        "data": data,
+        "timestamp": datetime.datetime.now()
+    }
+result = process_user_data(101, {"email": "user@example.com"}, data_collection_purpose, user_consent)
+print(result)
+
+
+ raw_data = {
+     "username": "user1",
+     "password_hash": "...",
+     "email": "user@example.com",
+     "location": "GPS_COORDINATES",
+     "age": 25
+ }
+
+ def minimize_data(data):
+     minimized = {k: v for k, v in data.items() if k in ["username", "email", "age"]}
+     return minimized
+ minimized_data = minimize_data(raw_data)
+ print(minimized_data)
